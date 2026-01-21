@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Maison Zen - Nos Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+       :root {
+    --main-bg: #f3f8f4;
+    --primary: #6ab187;
+    --secondary: #e0f7f1;
+    --text: #333;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --shadow: rgba(0, 0, 0, 0.08);
+    --radius: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: var(--main-bg);
+    color: var(--text);
+}
+
+header {
+    background: linear-gradient(to right, var(--primary), #b2dfdb);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 60px 6%;
+}
+
+.service-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 24px var(--shadow);
+    padding: 25px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px var(--shadow);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.service-card h2 {
+    font-size: 1.5rem;
+    margin: 0 0 12px;
+    color: var(--primary);
+}
+
+.service-card p {
+    margin: 6px 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.btn-reserver {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 22px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-reserver:hover {
+    background-color: #4d8d6e;
+    transform: scale(1.03);
+}
+
+footer {
+    background-color: var(--secondary);
+    text-align: center;
+    padding: 25px;
+    font-size: 0.85rem;
+    color: #444;
+    margin-top: 40px;
+    border-top: 1px solid #d0e8e3;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bienvenue chez Maison Zen</h1>
+    <p>Offrez-vous un moment de détente et d’harmonie intérieure</p>
+</header>
+
+<section class="services">
+    {% for service in services %}
+        <div class="service-card">
+            {% if service.image %}
+                <img src="{{ service.image.url }}" alt="{{ service.name }}">
+            {% endif %}
+            <h2>{{ service.name }}</h2>
+            <p><strong>Durée :</strong> {{ service.duration }}</p>
+            <p>{{ service.description }}</p>
+           <a href="{% url 'reservation' %}" class="btn-reserver">Réserver</a>
+
+        </div>
+    {% endfor %}
+</section>
+
+<footer>
+    &copy; {{ now|date:"Y" }} Maison Zen – Tous droits réservés.
+</footer>
+</body>
+</html>

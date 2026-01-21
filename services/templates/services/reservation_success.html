@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Réservation réussie - Maison Zen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #6ab187;
+            --primary-dark: #4e7f62;
+            --secondary: #f8f9fa;
+            --accent: #ff7e5f;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #f3f8f4 0%, #e1efe6 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent);
+            opacity: 0;
+            z-index: 999;
+            animation: confettiFall 5s linear forwards;
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .message-box {
+            max-width: 580px;
+            margin: 40px;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            transform: scale(0.95);
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.3s forwards;
+        }
+        
+        .message-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .highlight {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            background: rgba(106, 177, 135, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(106, 177, 135, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(106, 177, 135, 0.6);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .message-box {
+                padding: 30px;
+                margin: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box animate__animated">
+        <div class="icon">✓</div>
+        <h1>Merci Khalfaoui Samar !</h1>
+        
+        <p>Nous vous remercions pour votre confiance. Votre demande sera traitée dans les plus brefs délais et nous ne manquerons pas de vous contacter prochainement afin d'organiser votre moment de détente.</p>
+        
+        <div class="contact-info">
+            <p>Pour toute demande urgente :<br>
+            <span class="highlight">Téléphone : 27 777 533</span><br>
+            WhatsApp disponible</p>
+            
+            <p>Horaires d'ouverture :<br>
+            <span class="highlight">Jeudi au dimanche, 9h à 19h</span></p>
+        </div>
+        
+        <p>Notre établissement reste à votre entière disposition pour toute information complémentaire.</p>
+        
+        <a href="{% url 'service_list' %}" class="btn">Retour aux services</a>
+    </div>
+
+    <script>
+        // Création de confettis
+        function createConfetti() {
+            const colors = ['#6ab187', '#ff7e5f', '#feb47b', '#ffcc5c'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+        
+        // Lance l'animation après le chargement
+        window.addEventListener('load', function() {
+            createConfetti();
+            
+            // Animation au survol du bouton
+            const btn = document.querySelector('.btn');
+            btn.addEventListener('mouseenter', function() {
+                this.classList.add('animate__animated', 'animate__pulse');
+            });
+            
+            btn.addEventListener('animationend', function() {
+                this.classList.remove('animate__animated', 'animate__pulse');
+            });
+        });
+    </script>
+</body>
+</html>
