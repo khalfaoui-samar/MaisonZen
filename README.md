@@ -5,8 +5,8 @@
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
 
-**Maison Zen** est un site vitrine développé avec **Django** pour présenter les services d’un centre de bien-être.  
-Il permet aux utilisateurs de découvrir les services et de **réserver facilement** leur séance via un formulaire simple.
+Maison Zen est un site vitrine développé avec **Django** pour présenter les services d’un centre de bien-être.  
+Il permet aux utilisateurs de découvrir les services et de réserver facilement leur séance via un formulaire simple.
 
 ---
 
