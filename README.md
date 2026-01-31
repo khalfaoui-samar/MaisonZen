@@ -73,23 +73,3 @@ python manage.py runserver
 Ouvrir le navigateur sur : http://127.0.0.1:8000/
 
 ---
-
-📝 Remarques
-
-Projet développé à des fins d’apprentissage et démonstration.
-Toutes les réservations sont simulées, aucune base de données utilisée.
-
----
-
-⭐ Contribution
-
-- Ce projet est libre, tu peux le forker, le modifier ou l’utiliser pour apprendre.
-- Si tu as des idées d’amélioration, ouvre une issue ou propose un pull request.
-
----
-
-🎨 Astuces pour améliorer ton repo
-
-- Ajouter de vraies captures d’écran de ton site dans le dossier images/ et les utiliser dans le README.
-- Ajouter un GIF animé montrant le formulaire et la confirmation pour rendre le projet plus vivant.
-- Ajouter un lien GitHub Pages ou déploiement Heroku si tu veux montrer ton site en ligne.
