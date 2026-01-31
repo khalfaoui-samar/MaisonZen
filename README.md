@@ -73,3 +73,7 @@ python manage.py runserver
 Ouvrir le navigateur sur : http://127.0.0.1:8000/
 
 ---
+
+✨ Auteur
+
+Samar Khalfaoui Email : khalfaouisamar86@gmail.com github : https://github.com/khalfaoui-samar
